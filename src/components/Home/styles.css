@@ -1,0 +1,166 @@
+.home-container{
+  min-width: 100%;
+}
+.first-page-bg{
+display: flex;
+flex-direction: row;
+margin: 0px 40px 40px 40px;
+width: 100%;
+background-color:#e4f7ff;
+
+
+}
+.details-page{
+   margin: 30px;
+   width: 50%;
+}
+.first-image{
+    /* width: 50%; */
+    height: 629px;
+    width: 720px;
+}
+.home-paragraph{
+    font-size: 20px;
+    color: #fdc435;;
+    margin-bottom: 20px;
+}
+h2{
+    font-size: 60px;
+    font-family:'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+}
+.home-description{
+    margin-bottom: 20px;
+}
+.project-button{
+    background-color: #fdc435;
+}
+button{
+    cursor: pointer;
+    border-radius: 6px;
+    border: solid 1px;
+    padding: 5px 10px 5px 10px ;
+    margin: 10px;
+    font-weight: bold;
+
+}
+.project-input-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h3{
+    text-align: center;
+    font-size: 60px;
+    /* text-decoration: underline; */
+    margin-bottom: 20px;
+    border-bottom: 5px solid #fff952;
+    border-bottom-width: 6px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    width: 50%;
+}
+label{
+/* display:flex;
+flex-direction: column; */
+text-align: start;
+font-size: 20px;
+font-family: "Roboto";
+margin-bottom: 5px;
+
+}
+input{
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    height: 40px;
+    width: 600px;
+    margin-bottom: 10px;
+}
+.add-button{
+    font-size: 15px;
+    cursor: pointer;
+}
+.button-container{
+display: flex;
+justify-content: center;
+/* margin-right: 60px; */
+}
+@media screen and (max-width: 768px) {
+    .first-page-bg {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0px;
+    }
+  
+    .details-page {
+      display: flex;
+      flex-direction: column;
+      order: 1;
+      max-width: 100%;
+      text-align: left;
+      margin: 0px;
+    }
+  
+    .first-image {
+      max-width: 100%;
+      order: 0;
+
+    }
+  
+    .project-input-section {
+      max-width: 50%;
+      margin: 0 ;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .home-paragraph {
+      font-size: 20px;
+    }
+    h2{
+      font-size: 40px;
+    }
+  
+    .home-description {
+      font-size: 20px;
+    }
+  
+    .project-button {
+      font-size: 18px;
+    }
+    h3{
+      font-size: 20px;
+      text-align: center;
+    }
+    form{
+      /* width: 30%; */
+      align-self: center;
+    }
+    label{
+      font-size: 12px;
+    }
+    input{
+      width: 300px;
+      height: 20px;
+    }
+    .add-button{
+      margin-bottom: 30px;
+    }
+    button{
+      font-size: 17px;
+    }
+  }
+
+  @media screen and (min-width: 768px){
+    .first-page-bg{
+      margin: 0px;
+    }
+  }
