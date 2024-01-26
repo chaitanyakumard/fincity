@@ -15,36 +15,7 @@ const App = () => {
     { name: 'Project Name', link: './images/New Project (4).png', description: 'You can also add in this description the type of the project, if it was for web, mobile, electron.' },
   ]);
 
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-  //   switch (name) {
-  //     case 'projectName':
-  //       setProjectName(value);
-  //       break;
-  //     case 'projectLink':
-  //       setProjectLink(value);
-  //       break;
-  //     case 'projectDescription':
-  //       setProjectDescription(value);
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
-
-  // const addProject = () => {
-  //   const newProject = {
-  //     name: projectName,
-  //     link: projectLink,
-  //     description: projectDescription,
-  //   };
-
-  //   setProjects([...projects, newProject]);
-  //   setProjectName('');
-  //   setProjectLink('');
-  //   setProjectDescription('');
-  // };
-
+ 
   const addProject = (newProject) => {
     setProjects(prevProjects => [...prevProjects, { ...newProject, isUserAdded: true }]);
   };
