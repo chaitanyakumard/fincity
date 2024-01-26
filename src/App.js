@@ -8,43 +8,45 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./App.css";
 
 const App = () => {
-  const [projectName, setProjectName] = useState('');
-  const [projectLink, setProjectLink] = useState('');
-  const [projectDescription, setProjectDescription] = useState('');
+
   const [projects, setProjects] = useState([
     { name: 'Project Name', link: './images/yoga_pos.png', description: 'I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.' },
     { name: 'Project Name', link: './images/New Project (3).png', description: 'What was your role, your deliverables, if the project was personal, freelancing.' },
     { name: 'Project Name', link: './images/New Project (4).png', description: 'You can also add in this description the type of the project, if it was for web, mobile, electron.' },
   ]);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    switch (name) {
-      case 'projectName':
-        setProjectName(value);
-        break;
-      case 'projectLink':
-        setProjectLink(value);
-        break;
-      case 'projectDescription':
-        setProjectDescription(value);
-        break;
-      default:
-        break;
-    }
-  };
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   switch (name) {
+  //     case 'projectName':
+  //       setProjectName(value);
+  //       break;
+  //     case 'projectLink':
+  //       setProjectLink(value);
+  //       break;
+  //     case 'projectDescription':
+  //       setProjectDescription(value);
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // };
 
-  const addProject = () => {
-    const newProject = {
-      name: projectName,
-      link: projectLink,
-      description: projectDescription,
-    };
+  // const addProject = () => {
+  //   const newProject = {
+  //     name: projectName,
+  //     link: projectLink,
+  //     description: projectDescription,
+  //   };
 
-    setProjects([...projects, newProject]);
-    setProjectName('');
-    setProjectLink('');
-    setProjectDescription('');
+  //   setProjects([...projects, newProject]);
+  //   setProjectName('');
+  //   setProjectLink('');
+  //   setProjectDescription('');
+  // };
+
+  const addProject = (newProject) => {
+    setProjects(prevProjects => [...prevProjects, { ...newProject, isUserAdded: true }]);
   };
 
   return (
@@ -63,11 +65,11 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          element={<Home handleInputChange={handleInputChange} addProject={addProject} />}
+          element={<Home addProject={addProject} />}
           />
         <Route
           path="/projects"
-          element={<Projects projects={projects} />}
+          element={<Projects projects={projects} addProject={addProject} />}
           />
         <Route
           path="/contact"
